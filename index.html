@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Choice Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+  <!-- Animated background -->
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="app-shell">
+
+    <!-- ── HEADER ── -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">Best<strong>Choice</strong></span>
+      </div>
+      <p class="tagline">Fewer options. Better decisions.</p>
+    </header>
+
+    <!-- ── SETUP PANEL (API key + location) ── -->
+    <section class="setup-card" id="setupCard">
+      <div class="setup-inner">
+        <label class="field-label">Google Places API Key</label>
+        <div class="input-row">
+          <input type="password" id="apiKey" placeholder="AIza..." autocomplete="off" />
+          <button class="btn-ghost" id="toggleKey" title="Show/hide key">👁</button>
+        </div>
+        <p class="field-hint">Your key is never stored on our servers — used only in-browser.</p>
+      </div>
+    </section>
+
+    <!-- ── MAIN SEARCH ── -->
+    <section class="search-section">
+
+      <!-- Category pills -->
+      <div class="category-bar" role="group" aria-label="Category">
+        <button class="cat-pill active" data-cat="restaurant">
+          <span class="cat-icon">🍽</span> Restaurant
+        </button>
+        <button class="cat-pill" data-cat="hotel">
+          <span class="cat-icon">🏨</span> Hotel
+        </button>
+        <button class="cat-pill" data-cat="hostel">
+          <span class="cat-icon">🛏</span> Hostel
+        </button>
+        <button class="cat-pill" data-cat="tiffin">
+          <span class="cat-icon">🥘</span> Tiffin Center
+        </button>
+      </div>
+
+      <!-- Filter row -->
+      <div class="filter-row">
+        <span class="filter-label">Sort by</span>
+        <button class="filter-btn active" data-filter="best">⭐ Best Overall</button>
+        <button class="filter-btn" data-filter="budget">💰 Budget First</button>
+        <button class="filter-btn" data-filter="closest">📍 Closest</button>
+      </div>
+
+      <!-- Location + Search -->
+      <div class="action-row">
+        <div class="location-display" id="locationDisplay">
+          <span class="loc-icon">◎</span>
+          <span id="locationText">Detecting location…</span>
+        </div>
+        <button class="btn-search" id="searchBtn" disabled>
+          <span class="btn-text">Find Best Options</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ── RESULTS ── -->
+    <section class="results-section" id="resultsSection" aria-live="polite">
+      <!-- Injected by JS -->
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      Built to cut choice overload · Shows only top 3–5 picks
+    </footer>
+
+  </div><!-- /app-shell -->
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
